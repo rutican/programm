@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding = "windows-1251"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.00"
+	Name="Krest"
+	ProjectGUID="{6B6A9A2A-0DED-4666-8478-A9AFAB3AB6F3}"
+	Keyword="MFCProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="1"
+			UseOfMFC="1"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG"
+				MinimalRebuild="TRUE"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				TreatWChar_tAsBuiltInType="TRUE"
+				UsePrecompiledHeader="3"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="TRUE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				LinkIncremental="2"
+				GenerateDebugInformation="TRUE"
+				SubSystem="2"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="FALSE"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="1"
+			UseOfMFC="1"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				OmitFramePointers="TRUE"
+				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG"
+				StringPooling="TRUE"
+				MinimalRebuild="FALSE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				TreatWChar_tAsBuiltInType="TRUE"
+				UsePrecompiledHeader="3"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="TRUE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				LinkIncremental="1"
+				GenerateDebugInformation="TRUE"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="FALSE"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"
+				AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+			<File
+				RelativePath="DlgIP.cpp">
+			</File>
+			<File
+				RelativePath="KlientSok.cpp">
+			</File>
+			<File
+				RelativePath="Krest.cpp">
+			</File>
+			<File
+				RelativePath="hlp\Krest.hpj">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Making help file..."
+						CommandLine="start /wait hcw /C /E /M &quot;hlp\$(ProjectName).hpj&quot;
+if errorlevel 1 goto :HelpError
+if not exist &quot;hlp\$(ProjectName).hlp&quot; goto :HelpError
+if not exist &quot;hlp\$(ProjectName).cnt&quot; goto :HelpError
+echo.
+copy &quot;hlp\$(ProjectName).hlp&quot; &quot;$(OutDir)&quot;
+copy &quot;hlp\$(ProjectName).cnt&quot; &quot;$(OutDir)&quot;
+goto :HelpDone
+:HelpError
+echo hlp\$(ProjectName).hpj(1) : error: Problem encountered creating help file
+:HelpDone
+echo.
+"
+						AdditionalDependencies="hlp\$(ProjectName).hm"
+						Outputs="$(OutDir)\$(ProjectName).hlp"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Making help file..."
+						CommandLine="start /wait hcw /C /E /M &quot;hlp\$(ProjectName).hpj&quot;
+if errorlevel 1 goto :HelpError
+if not exist &quot;hlp\$(ProjectName).hlp&quot; goto :HelpError
+if not exist &quot;hlp\$(ProjectName).cnt&quot; goto :HelpError
+echo.
+copy &quot;hlp\$(ProjectName).hlp&quot; &quot;$(OutDir)&quot;
+copy &quot;hlp\$(ProjectName).cnt&quot; &quot;$(OutDir)&quot;
+goto :HelpDone
+:HelpError
+echo hlp\$(ProjectName).hpj(1) : error: Problem encountered creating help file
+:HelpDone
+echo.
+"
+						AdditionalDependencies="hlp\$(ProjectName).hm"
+						Outputs="$(OutDir)\$(ProjectName).hlp"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="MainFrm.cpp">
+			</File>
+			<File
+				RelativePath="RecvSok.cpp">
+			</File>
+			<File
+				RelativePath="ServerSok.cpp">
+			</File>
+			<File
+				RelativePath="stdafx.cpp">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc">
+			<File
+				RelativePath="DlgIP.h">
+			</File>
+			<File
+				RelativePath="KlientSok.h">
+			</File>
+			<File
+				RelativePath="Krest.h">
+			</File>
+			<File
+				RelativePath="MainFrm.h">
+			</File>
+			<File
+				RelativePath="RecvSok.h">
+			</File>
+			<File
+				RelativePath="Resource.h">
+			</File>
+			<File
+				RelativePath="ServerSok.h">
+			</File>
+			<File
+				RelativePath="stdafx.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;manifest">
+			<File
+				RelativePath="KRETICI_NOLICI.rc">
+			</File>
+			<File
+				RelativePath="res\Krect.ico">
+			</File>
+			<File
+				RelativePath="res\Krectbmp.bmp">
+			</File>
+			<File
+				RelativePath="res\Krest.rc2">
+			</File>
+			<File
+				RelativePath="res\Toolbar.bmp">
+			</File>
+			<File
+				RelativePath="res\icon3.ico">
+			</File>
+			<File
+				RelativePath="res\nol.ico">
+			</File>
+		</Filter>
+		<Filter
+			Name="Help Files"
+			Filter="rtf;cnt">
+			<File
+				RelativePath="hlp\Krest.cnt">
+			</File>
+			<File
+				RelativePath="hlp\afxcore.rtf">
+			</File>
+			<File
+				RelativePath="hlp\Images\bullet.bmp">
+			</File>
+		</Filter>
+		<File
+			RelativePath="ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
