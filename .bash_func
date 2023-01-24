@@ -1,0 +1,3 @@
+wanip() {
+wget -q -O - checkip.dyndns.com | awk '{print $6}'| sed 's/<.*>//'
+}
