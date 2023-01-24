@@ -1,0 +1,10 @@
+﻿cl : командная строка  warning D9035: использование параметра "Gm" нежелательно, он будет удален в следующих выпусках
+  KozelView.cpp
+C:\Users\user\Desktop\Kozel\KozelView.cpp(258,53): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\user\Desktop\Kozel\KozelView.cpp(258,51): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\user\Desktop\Kozel\KozelView.cpp(1483,52): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\user\Desktop\Kozel\KozelView.cpp(1483,50): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\user\Desktop\Kozel\KozelView.cpp(1495,52): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\user\Desktop\Kozel\KozelView.cpp(1495,50): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+Karta.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
+  Kozel.vcxproj -> C:\Users\user\Desktop\Kozel\Debug\Kozel.exe
