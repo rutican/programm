@@ -1,0 +1,18 @@
+# Скрип в микротике, который вкл/выкл вайфай через опр. промежуток времени
+
+
+#переменная в которую передается время из скрипта в линукс
+:global ztime
+#:local min s
+#:local ltime ("$ztime$min");
+#:put $ltime
+
+#Обработка ошибки при удалении несуществующей шедули wifi
+do {/system/scheduler/remove  wifi} on-error={:log info " Net sheduli wifi "}
+
+#Включаем вайфай
+/interface wireless enable 1
+#Создаем шедулю wifi, с параметрами интервал, команда-on-event = удалить шедулю после выполнения и выключить интефрейс 2 вайфай
+/system/scheduler/add name=wifi  interval=$ztime on-event="/system/
+scheduler/remove  wifi; /interface wireless disable 1 " 
+
