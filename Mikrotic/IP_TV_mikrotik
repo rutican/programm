@@ -1,0 +1,10 @@
+/ip firewall filter
+
+add chain=input protocol=igmp
+add chain=forward dst-port=1234 protocol=udp
+
+/routing igmp-proxy interface
+#Можно на бридж, можно на конкретный интерфейс
+add interface=bridge1
+add alternative-subnets=0.0.0.0/0 interface=ether1 upstream=yes
+
