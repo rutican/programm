@@ -1,0 +1,55 @@
+---
+
+
+- name: "Разрешаем пересылку пакетов между интерфейсами "
+  lineinfile:
+    dest: "/etc/sysctl.conf"
+    state: "present"
+    regexp: "^#net.ipv4.ip_forwad"
+    line: "net.ipv4.ip_forward=1"
+
+
+- name: "Save izm"
+  command: "sysctl -p"
+
+# ============== end peresil packetov ====================
+
+- name: Ustanovka Moskovsckogo time
+  command:
+    timedatectl set-timezone Europe/Moscow
+
+- name: Make sure a service unit is running
+  ansible.builtin.systemd_service:
+    state: stopped
+    name: sstpd
+
+
+- name: Сброс iptables
+  ansible.builtin.script:
+    cmd: re-set-iptables.sh   
+
+
+# iptables
+- name: Set iptables
+  command: "/bin/bash /scripts/set_iptables.sh"
+
+  #systemctl enable sstpd.service
+#systemctl start sstpd.service
+
+
+
+- name: Make sure a service unit is running
+  ansible.builtin.systemd_service:
+    state: started
+    name: sstpd
+
+- name: Enable service httpd and ensure it is not masked
+  ansible.builtin.systemd_service:
+    name: sstpd
+    enabled: true
+    masked: no
+
+
+
+
+  

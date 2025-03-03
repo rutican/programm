@@ -1,0 +1,14 @@
+---
+
+- name: ' Update APT cache'
+  apt:
+    update_cache: yes
+
+- name: Install the packages python3, python3-pip, ppp, openssl
+  apt:
+    pkg: "{{ item }}"
+  loop: "{{ packages }}"
+
+#Установите sstp-server с помощью pip3: pip3 install sstp-server
+- name: "install sstp-server"
+  command: "pip3 install sstp-server"

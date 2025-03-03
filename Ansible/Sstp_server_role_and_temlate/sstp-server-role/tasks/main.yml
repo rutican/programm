@@ -1,0 +1,6 @@
+---
+# tasks file for sstp-server-role
+# Setup/install tasks
+- include_tasks: install.yml
+- include_tasks: copy_files.yml
+- include_tasks: deployapp.yml

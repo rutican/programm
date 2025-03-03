@@ -1,0 +1,68 @@
+---
+
+- name: "Copy cert"
+  copy:
+    src: cert.pem
+    dest: /etc/ppp/
+
+- name: "Copy pub kl"
+  copy:
+    src: privkey.pem
+    dest: /etc/ppp/
+
+
+- name: "Copy options.sstpd"
+  copy:
+    src: options.sstpd
+    dest: /etc/ppp/
+
+
+- name: "Copy chap-secrets"
+  copy:
+    src: chap-secrets
+    dest: /etc/ppp/
+
+- name: "Создаем файл /etc/sstpd.ini "
+  ansible.builtin.template:
+    src: sstpd.ini.j2
+    dest: /etc/sstpd.ini
+      #mode: 0444
+
+# Создаем файл в папке systemd nano /etc/systemd/system/sstpd.service 
+- name: "Create  /etc/systemd/system/sstpd.service"
+  ansible.builtin.template:
+    src: sstpd.service.j2
+    dest: /etc/systemd/system/sstpd.service
+
+- name: "Create  /etc/ppp/ip-up.local"
+  ansible.builtin.template:
+    src: ip-up.local.j2
+    dest: /etc/ppp/ip-up.local
+    mode: 0744
+
+- name: "Create  /etc/ppp/ip-down.local"
+  ansible.builtin.template:
+    src: ip-down.local.j2
+    dest: /etc/ppp/ip-down.local
+    mode: 0744
+
+# iptables
+
+- name: Создаем директорию для скриптов и файлов конфигурации
+  file:
+    path="{{ path_script_file }}"
+    mode=0755
+    state=directory
+
+
+- name: "Copy reset iptables"
+  copy:
+    src: re-set-iptables.sh
+    dest: "{{ path_script_file }}"
+    mode: 0744
+
+- name: Копируем скрипты и файлы конфигурации
+  ansible.builtin.template:
+    src: set_iptables.sh.j2
+    dest: "{{ path_script_file }}/set_iptables.sh"
+    mode: 0744

@@ -1,0 +1,26 @@
+[Unit]
+Description=SSTP VPN server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/sstpd -f /etc/sstpd.ini
+ExecStartPost=/sbin/iptables -I INPUT -p tcp --dport {{ sstp_port }} -m state --state NEW -j ACCEPT
+ExecStartPost=/sbin/iptables -I INPUT -p gre -j ACCEPT
+ExecStartPost=/sbin/iptables -I POSTROUTING -t nat -o ens3 -j MASQUERADE
+ExecStartPost=/sbin/iptables -I FORWARD -p tcp --tcp-flags SYN,RST SYN -s 192.168.10.0/24 -j TCPMSS  --clamp-mss-to-pmtu
+ExecStartPost=/sbin/iptables -I FORWARD -i ppp+ -o ens3 -j ACCEPT
+ExecStartPost=/sbin/iptables -I FORWARD -i ens3 -o ppp+ -j ACCEPT
+ExecStartPost=/sbin/iptables -I FORWARD -i ppp+ -o ppp+ -j ACCEPT
+ExecStopPost=/sbin/iptables -D INPUT -p tcp --dport {{ sstp_port }} -m state --state NEW -j ACCEPT
+ExecStopPost=/sbin/iptables -D INPUT -p gre -j ACCEPT
+ExecStopPost=/sbin/iptables -D POSTROUTING -t nat -o ens3 -j MASQUERADE
+ExecStopPost=/sbin/iptables -D FORWARD -p tcp --tcp-flags SYN,RST SYN -s 192.168.10.0/24 -j TCPMSS  --clamp-mss-to-pmtu
+ExecStopPost=/sbin/iptables -D FORWARD -i ppp+ -o ens3 -j ACCEPT
+ExecStopPost=/sbin/iptables -D FORWARD -i ens3 -o ppp+ -j ACCEPT
+ExecStopPost=/sbin/iptables -D FORWARD -i ppp+ -o ppp+ -j ACCEPT
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
