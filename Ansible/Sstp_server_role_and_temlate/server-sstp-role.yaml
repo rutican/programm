@@ -1,0 +1,6 @@
+---
+
+- hosts: serv67
+
+  roles:
+    - role: sstp-server-role

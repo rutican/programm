@@ -1,0 +1,15 @@
+#!/bin/bash
+#echo "запуск АП интерфейса $1 ip=$5" >> /root/log_sstp_up.txt
+#Разместить в /etc/ppp будет срабатывать когда поднимается интерфейс
+
+INTERFASE="$1"
+IP_MIKROT="192.168.10.110"
+# in na cliente stavit   local  ip  - $4
+IP_TEKUCH="$5"
+
+if [ $IP_TEKUCH = $IP_MIKROT ]
+then
+#       echo "Подключился МИКРОТ" >> /root/log_sstp_up.txt
+        ip route add 192.168.77.0/24 via 192.168.10.1 dev $1
+fi
+

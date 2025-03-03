@@ -1,0 +1,5 @@
+---
+# vars file for sstp-server-role
+sstp_port: 6951
+ssh_port: 22
+path_script_file: /scripts

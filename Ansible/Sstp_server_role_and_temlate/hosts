@@ -1,0 +1,9 @@
+
+[reactjs_servers]
+client01 ansible_host=192.168.77.15 ansible_user=ser ansible_password=1
+
+[nginx_servers]
+client01 ansible_host=192.168.77.20 ansible_user=root ansible_password=1
+
+[reactjs_servers:vars]
+key=value
