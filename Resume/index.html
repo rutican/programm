@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Системный администратор</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .name {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .position {
+            font-size: 1.3em;
+            color: #ecf0f1;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: #6b7075;
+            color: #ecf0f1;
+        }
+        
+        .contact-item {
+            margin: 5px 10px;
+        }
+        
+        .section {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background: #e8f4f8;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+        }
+        
+        .job-title, .edu-title {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .company, .institution {
+            color: #3498db;
+        }
+        
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 600px) {
+            .contact-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .name {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="name">Туев Сергей</h1>
+            <p class="position">Системный администратор</p>
+        </header>
+        
+        <div class="contact-info">
+            <div class="contact-item">📧  <a href="mailto:tuevsv@mail.ru">tuevsv@mail.ru</a></div>
+            <div class="contact-item">📱 +7 (953) 710-53-61</div>
+            <div class="contact-item">📍 Тамбов, Россия</div>
+            <div class="contact-item">💼 <a href="https://github.com/rutican/programm"> github </a></div>
+            <div class="contact-item">🌐 <a href="https://tuevs.ru">Сайт</a></div>
+        </div>
+        
+       
+      
+        <div class="section">
+          <h2>Опыт работы</h2>
+          <p><strong>Системный администратор — ООО "Тамбовпечать"</strong><br/>
+          <em>Июль 2021 — Февраль 2024</em></p>
+          <ul>
+            <li>Установка, настройка и обслуживание офисной техники и кассового оборудования (Atol, Frontol6)</li>
+            <li>Обеспечение работоспособности ЛВС.</li>
+            <li>Мониторинг доступности и состояния IT-инфраструктуры. </li>
+            <li>Поддержка пользователей, инструктаж, обучение.</li>
+          </ul>
+
+          <p>&nbsp;</p>
+          <hr style="width: 50%; margin: 0 auto;">
+          <p>&nbsp;</p>
+
+         
+          <p><strong>Специалист по информационным технологиям — Почта России</strong><br/>
+            <em>Июль 2019 — Сентябрь 2019</em></p>
+            <ul>
+                    <li>Установка/администрирование ОС Windows;</li> 
+                    <li>Администрирование сети предприятия;</li>
+                    <li>Настройка/подключение периферийного оборудования;</li>
+                    <li>Настройка/установка специализированного ПО;</li>
+                    <li>Поддержка пользователей.</li>
+            </ul>
+
+          <p>&nbsp;</p>
+          <hr style="width: 50%; margin: 0 auto;">
+          <p>&nbsp;</p>
+
+         
+          <p><strong>Помощник начальника оперативно-планового отделения — Вооруженные силы РФ</strong><br/>
+            <em>Март 2005 — Февраль 2014 </em></p>
+            <ul>
+                    <li>Сопровождение специализированного программного обеспечения;</li> 
+                    <li>Создание программ для тестирования, автоматизации принятия решения;</li>
+                    <li>Разработка планирующих документов организации;</li>
+                    <li>Ремонт ПК и периферийных устройств;</li>
+                    <li>Установка ОС windows и др. программ.</li>
+            </ul>
+
+        </div>
+        
+        
+        <section class="section">
+          <h2>Навыки</h2>
+          <div class="skills-grid">
+
+
+              <div class="skill-item">Linux (Ubuntu/CentOS)</div>
+              <div class="skill-item">Windows Server</div>
+              <div class="skill-item">Active Directory</div>
+              <div class="skill-item">DNS/DHCP</div>
+              <div class="skill-item">VMware/Hyper-V</div>
+              <div class="skill-item">Firewall/VPN</div>
+              <div class="skill-item">Bash</div>
+
+              <div class="skill-item">HTML5/CSS</div>
+              <div class="skill-item">GitLab CI/CD</div>
+              <div class="skill-item">Ansible</div>
+              <div class="skill-item">MikroTik</div>
+              <div class="skill-item">Docker</div>
+              <div class="skill-item">Atol Frontol 6</div>
+              <div class="skill-item">MS Visual C++</div>
+              <div class="skill-item">Visual Basic</div>
+              
+          </div>
+      </section>
+      
+
+
+        <div class="section">
+          <h2>Образование</h2>
+          <p><strong>Инженер по специальности «Автоматизированные системы обработки информации и управления»</strong><br/>
+          <em>Военный авиационный технический университет, 1994–1999</em></p>
+          <p>Факультет: Факультет авиационного оборудования летательных аппаратов, Автоматизированные системы обработки информации и управления</p>
+        </div>
+        
+        <section class="section">
+            <h2>Дополнительная информация</h2>
+            <ul>
+                <li>Водительские права категории B</li>
+                <li>Готов к командировкам</li>
+                <li>Уровень английского языка: Intermediate</li>
+                <li>График работы: полный рабочий день</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
