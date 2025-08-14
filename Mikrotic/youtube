@@ -1,0 +1,152 @@
+#for SSTP
+
+/ip/firewall/address-list add list=SSTP address=8.8.4.0/24
+/ip/firewall/address-list add list=SSTP address=8.8.8.0/24
+/ip/firewall/address-list add list=SSTP address=8.34.0.0/16
+/ip/firewall/address-list add list=SSTP address=8.35.0.0/16
+/ip/firewall/address-list add list=SSTP address=23.236.0.0/16
+/ip/firewall/address-list add list=SSTP address=23.251.0.0/16
+/ip/firewall/address-list add list=SSTP address=31.13.0.0/16
+/ip/firewall/address-list add list=SSTP address=34.0.0.0/10
+/ip/firewall/address-list add list=SSTP address=34.64.0.0/10
+/ip/firewall/address-list add list=SSTP address=35.184.0.0/13
+/ip/firewall/address-list add list=SSTP address=35.192.0.0/14
+/ip/firewall/address-list add list=SSTP address=35.196.0.0/15
+/ip/firewall/address-list add list=SSTP address=35.198.0.0/16
+/ip/firewall/address-list add list=SSTP address=35.199.0.0/17
+/ip/firewall/address-list add list=SSTP address=35.200.0.0/13
+/ip/firewall/address-list add list=SSTP address=35.208.0.0/12
+/ip/firewall/address-list add list=SSTP address=45.64.0.0/16
+/ip/firewall/address-list add list=SSTP address=46.19.0.0/16
+/ip/firewall/address-list add list=SSTP address=57.144.0.0/16
+/ip/firewall/address-list add list=SSTP address=64.18.0.0/16
+/ip/firewall/address-list add list=SSTP address=64.233.0.0/16
+/ip/firewall/address-list add list=SSTP address=66.102.0.0/16
+/ip/firewall/address-list add list=SSTP address=66.220.0.0/16
+/ip/firewall/address-list add list=SSTP address=66.249.0.0/16
+/ip/firewall/address-list add list=SSTP address=68.66.0.0/16
+/ip/firewall/address-list add list=SSTP address=70.32.0.0/16
+/ip/firewall/address-list add list=SSTP address=72.14.0.0/16
+/ip/firewall/address-list add list=SSTP address=72.52.0.0/16
+/ip/firewall/address-list add list=SSTP address=74.114.0.0/16
+/ip/firewall/address-list add list=SSTP address=74.119.0.0/16
+/ip/firewall/address-list add list=SSTP address=74.125.0.0/16
+/ip/firewall/address-list add list=SSTP address=81.29.0.0/16
+/ip/firewall/address-list add list=SSTP address=83.174.0.0/16
+/ip/firewall/address-list add list=SSTP address=84.15.0.0/16
+/ip/firewall/address-list add list=SSTP address=87.245.0.0/16
+/ip/firewall/address-list add list=SSTP address=91.213.0.0/16
+/ip/firewall/address-list add list=SSTP address=92.46.0.0/16
+/ip/firewall/address-list add list=SSTP address=94.140.0.0/16
+/ip/firewall/address-list add list=SSTP address=103.4.0.0/16
+/ip/firewall/address-list add list=SSTP address=103.4.96.0/22
+/ip/firewall/address-list add list=SSTP address=104.18.0.0/16
+/ip/firewall/address-list add list=SSTP address=104.21.0.0/16
+/ip/firewall/address-list add list=SSTP address=104.31.0.0/16
+/ip/firewall/address-list add list=SSTP address=104.32.0.0/16
+/ip/firewall/address-list add list=SSTP address=104.132.0.0/16
+/ip/firewall/address-list add list=SSTP address=104.133.0.0/16
+/ip/firewall/address-list add list=SSTP address=104.134.0.0/15
+/ip/firewall/address-list add list=SSTP address=104.156.0.0/16
+/ip/firewall/address-list add list=SSTP address=104.237.0.0/16
+/ip/firewall/address-list add list=SSTP address=108.170.0.0/16
+/ip/firewall/address-list add list=SSTP address=108.177.0.0/15
+/ip/firewall/address-list add list=SSTP address=108.177.0.0/16
+/ip/firewall/address-list add list=SSTP address=108.59.0.0/16
+/ip/firewall/address-list add list=SSTP address=130.211.0.0/16
+/ip/firewall/address-list add list=SSTP address=136.112.0.0/12
+/ip/firewall/address-list add list=SSTP address=142.250.0.0/16
+/ip/firewall/address-list add list=SSTP address=142.251.0.0/16
+/ip/firewall/address-list add list=SSTP address=146.148.0.0/16
+/ip/firewall/address-list add list=SSTP address=157.240.0.0/16
+/ip/firewall/address-list add list=SSTP address=162.159.0.0/16
+/ip/firewall/address-list add list=SSTP address=162.216.0.0/16
+/ip/firewall/address-list add list=SSTP address=162.222.0.0/16
+/ip/firewall/address-list add list=SSTP address=172.110.0.0/16
+/ip/firewall/address-list add list=SSTP address=172.217.0.0/16
+/ip/firewall/address-list add list=SSTP address=172.253.0.0/16
+/ip/firewall/address-list add list=SSTP address=172.67.0.0/16
+/ip/firewall/address-list add list=SSTP address=173.194.0.0/16
+/ip/firewall/address-list add list=SSTP address=173.252.0.0/16
+/ip/firewall/address-list add list=SSTP address=185.38.0.0/16
+/ip/firewall/address-list add list=SSTP address=185.53.0.0/16
+/ip/firewall/address-list add list=SSTP address=185.60.0.0/16
+/ip/firewall/address-list add list=SSTP address=185.89.0.0/16
+/ip/firewall/address-list add list=SSTP address=188.114.0.0/16
+/ip/firewall/address-list add list=SSTP address=190.115.0.0/16
+/ip/firewall/address-list add list=SSTP address=192.158.0.0/16
+/ip/firewall/address-list add list=SSTP address=192.178.0.0/15
+/ip/firewall/address-list add list=SSTP address=193.46.0.0/16
+/ip/firewall/address-list add list=SSTP address=193.186.0.0/16
+/ip/firewall/address-list add list=SSTP address=199.36.0.0/16
+/ip/firewall/address-list add list=SSTP address=199.192.0.0/16
+/ip/firewall/address-list add list=SSTP address=199.223.0.0/16
+/ip/firewall/address-list add list=SSTP address=204.15.0.0/16
+/ip/firewall/address-list add list=SSTP address=207.223.0.0/16
+/ip/firewall/address-list add list=SSTP address=208.65.0.0/16
+/ip/firewall/address-list add list=SSTP address=208.68.0.0/16
+/ip/firewall/address-list add list=SSTP address=208.81.0.0/16
+/ip/firewall/address-list add list=SSTP address=208.117.0.0/16
+/ip/firewall/address-list add list=SSTP address=209.85.0.0/16
+/ip/firewall/address-list add list=SSTP address=209.85.128.0/17
+/ip/firewall/address-list add list=SSTP address=216.40.0.0/16
+/ip/firewall/address-list add list=SSTP address=216.58.0.0/16
+/ip/firewall/address-list add list=SSTP address=216.58.192.0/18
+/ip/firewall/address-list add list=SSTP address=216.239.0.0/16
+/ip/firewall/address-list add list=SSTP address=216.239.32.0/19
+/ip/firewall/address-list add list=SSTP address=217.168.0.0/16
+/ip/firewall/address-list add list=SSTP address=124.108.0.0/16
+/ip/firewall/address-list add list=SSTP address=129.134.0.0/16
+/ip/firewall/address-list add list=SSTP address=130.211.0.0/16
+/ip/firewall/address-list add list=SSTP address=136.112.0.0/12
+/ip/firewall/address-list add list=SSTP address=146.148.0.0/16
+/ip/firewall/address-list add list=SSTP address=162.159.0.0/16
+/ip/firewall/address-list add list=SSTP address=162.216.0.0/16
+/ip/firewall/address-list add list=SSTP address=162.222.0.0/16
+/ip/firewall/address-list add list=SSTP address=173.255.0.0/16
+/ip/firewall/address-list add list=SSTP address=185.214.0.0/16
+/ip/firewall/address-list add list=SSTP address=185.38.0.0/16
+/ip/firewall/address-list add list=SSTP address=185.53.0.0/16
+/ip/firewall/address-list add list=SSTP address=185.60.0.0/16
+/ip/firewall/address-list add list=SSTP address=185.89.0.0/16
+/ip/firewall/address-list add list=SSTP address=190.115.0.0/16
+/ip/firewall/address-list add list=SSTP address=195.123.0.0/16
+/ip/firewall/address-list add list=SSTP address=194.110.0.0/16
+/ip/firewall/address-list add list=SSTP address=176.97.0.0/16
+/ip/firewall/address-list add list=SSTP address=5.45.0.0/16
+/ip/firewall/address-list add list=SSTP address=193.46.0.0/16
+/ip/firewall/address-list add list=SSTP address=68.66.0.0/16
+/ip/firewall/address-list add list=SSTP address=92.46.0.0/16
+/ip/firewall/address-list add list=SSTP address=124.108.0.0/16
+
+
+#Создаем таблицу маршрутизации
+/routing/table add fib name=SSTP
+/ip firewall nat add action=masquerade chain=srcnat out-interface=sstp-laga
+/ip/firewall/mangle add chain=prerouting dst-address-list=SSTP action=mark-routing  new-routing-mark=SSTP
+/ip/route add gateway=sstp-laga distance=1 routing-table=SSTP
+/ip dhcp-client set [find comment="defconf"] add-default-route=special-classless  default-route-distance=2
+/ip firewall filter set [find comment="FastTrack"] disabled=yes
+/system reboot
+Y
+
+=============== удалить все что сделал==========
+#/routing/table add fib name=SSTP
+routing/table/remove SSTP
+
+#/ip firewall nat add action=masquerade chain=srcnat out-interface=sstp-laga
+/ip firewall nat remove [find chain=srcnat out-interface=sstp-laga action=masquerade]
+
+#/ip/firewall/mangle add chain=prerouting dst-address-list=SSTP action=mark-routing  new-routing-mark=SSTP
+/ip/firewall/mangle remove [find chain=prerouting dst-address-list=SSTP action=mark-routing  new-routing-mark=SSTP]
+
+#/ip/route add gateway=sstp-laga distance=1 routing-table=SSTP
+/ip/route remove [find gateway=sstp-laga distance=1 routing-table=SSTP]
+
+#/ip dhcp-client set [find comment="defconf"] add-default-route=special-classless  default-route-distance=2
+
+#/ip firewall filter set [find comment="defconf: fasttrack"] disabled=yes
+/ip firewall filter set [find comment="defconf: fasttrack"] disabled=no
+
+
+
