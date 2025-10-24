@@ -1,0 +1,9 @@
+---
+- name: Установка базовых программ в Ubuntu 24.04
+  hosts: localhost
+  connection: local
+  become: yes
+  roles:
+    - ubuntu_24_setup_programms
+
+    #connection: local — потому что вы настраиваете локальную машину (только что установленную Ubuntu).

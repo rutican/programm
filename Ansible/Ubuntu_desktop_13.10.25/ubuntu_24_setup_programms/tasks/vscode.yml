@@ -1,0 +1,61 @@
+#================ Установка и настройка VS CODE
+- name: Установить зависимости
+  apt:
+    name:
+      - wget
+      - ca-certificates
+    state: present
+  become: yes
+
+- name: Скачать и установить GPG-ключ Microsoft в /usr/share/keyrings/
+  shell: |
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc |
+    gpg --dearmor |
+    sudo tee /usr/share/keyrings/microsoft.gpg > /dev/null
+  args:
+    creates: /usr/share/keyrings/microsoft.gpg
+  become: yes
+
+- name: Добавить репозиторий VS Code в формате .sources (Ubuntu 24.04)
+  copy:
+    dest: /etc/apt/sources.list.d/vscode.sources
+    content: |
+      Types: deb
+      URIs: https://packages.microsoft.com/repos/code
+      Suites: stable
+      Components: main
+      Architectures: amd64
+      Signed-By: /usr/share/keyrings/microsoft.gpg
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+
+- name: Обновить кэш apt и установить VS Code
+  apt:
+    name: code
+    state: present
+    update_cache: yes
+  become: yes
+
+
+- name: Установить расширения VS Code
+  shell: |
+    if ! code --list-extensions | grep -qi '^{{ item }}$'; then
+      code --install-extension {{ item }}
+    fi
+  args:
+    executable: /bin/bash
+  environment:
+    HOME: "/home/rut"
+  become: no
+  loop:
+    - redhat.ansible
+    - wholroyd.jinja
+    - PKief.material-icon-theme
+    - ritwickdey.LiveServer
+    - formulahendry.auto-rename-tag
+    - zignd.html-css-class-completion
+    - pranaygp.vscode-css-peek 
+  loop_control:
+    label: "{{ item }}"

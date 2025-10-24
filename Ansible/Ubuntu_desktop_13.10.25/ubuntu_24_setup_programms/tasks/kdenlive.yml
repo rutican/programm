@@ -1,0 +1,9 @@
+---
+- name: Установить Kdenlive из официального репозитория Ubuntu
+  apt:
+    name: kdenlive
+    state: present
+    install_recommends: yes
+  become: yes
+  environment:
+    DEBIAN_FRONTEND: noninteractive

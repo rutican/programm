@@ -1,0 +1,9 @@
+---
+- name: Установить Chromium
+  apt:
+    name: chromium-browser
+    state: present
+    install_recommends: yes
+  become: yes
+  environment:
+    DEBIAN_FRONTEND: noninteractive

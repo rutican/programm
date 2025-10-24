@@ -1,0 +1,95 @@
+Настраиваю ансибл на чистой убунту 
+	sudo apt install python3-pip
+		- не работает на убунту 24 т.к. пип может конфликтовать с апт
+	Пробую через пипх
+		sudo apt install pipx
+		pipx ensurepath
+		pipx install ansible
+		
+		Ансибл почему то устанавливается криво и не создает симбинки на исполняемые файл добавим их
+			# Переходим в папку bin виртуального окружения
+				cd ~/.local/share/pipx/venvs/ansible/bin/
+
+				# Создаём симлинки для всех основных утилит
+				ln -sf ~/.local/share/pipx/venvs/ansible/bin/ansible ~/.local/bin/
+				ln -sf ~/.local/share/pipx/venvs/ansible/bin/ansible-playbook ~/.local/bin/
+				ln -sf ~/.local/share/pipx/venvs/ansible/bin/ansible-galaxy ~/.local/bin/
+				ln -sf ~/.local/share/pipx/venvs/ansible/bin/ansible-vault ~/.local/bin/
+				ln -sf ~/.local/share/pipx/venvs/ansible/bin/ansible-pull ~/.local/bin/
+				ln -sf ~/.local/share/pipx/venvs/ansible/bin/ansible-config ~/.local/bin/
+
+Проверяем установку
+	ansible --version
+	ansible-playbook --version
+==========================================================
+Инициируем роль?
+	ansible-galaxy init ubuntu_24_setup_programms
+Создаем или вносим изменения  в файлы
+	vim ubuntu_24_setup_programms.yaml
+	vim inventory
+	vim ubuntu_24_setup_programms/defaults/main.yml
+	Сюда мы добавляем объявляем переменные, имена пакетов для простых программ которые работают сразу без дополнительной настройки
+	--------------- 
+	#SPDX-License-Identifier: MIT-0
+---
+# defaults file for ubuntu_24_setup_programms
+
+# Список пакетов для установки в Ubuntu 24.04
+ubuntu_24_programs:
+  - curl
+  - wget
+  - git
+  - htop
+  - nano
+  - vim
+  - unzip
+  #- software-properties-common
+  #- apt-transport-https
+  #- ca-certificates
+  #- gnupg
+  #- lsb-release
+  # Добавьте сюда свои программы, например:
+  # - docker.io
+  # - python3-pip
+  # - nginx
+  --------------------------------------
+  vim ubuntu_24_setup_programms/tasks/main.yml 
+  Сюда мы добавляем код для установки и настройки конкретных программ
+
+--------------------------------
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for ubuntu_24_setup_programms
+
+
+- name: Обновить кэш пакетов apt
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600  # обновлять не чаще чем раз в час
+  become: yes
+
+- name: Установить необходимые программы
+  apt:
+    name: "{{ ubuntu_24_programs }}"
+    state: present
+    autoremove: no
+    autoclean: no
+  become: yes
+  environment:
+    DEBIAN_FRONTEND: noninteractive
+#🔹 become: yes — даёт права sudo (обязательно для установки пакетов).
+#🔹 DEBIAN_FRONTEND: noninteractive — предотвращает вопросы вроде "Хотите перезаписать конфиг?" при установке.
+
+
+-------------------------------------------------------
+
+Запускаем в режиме проверки и чтобы можно было ввести пароль
+	ansible-playbook -i inventory ubuntu_24_setup_programms.yaml --check --diff --ask-become-pass
+
+Применить изменения
+	ansible-playbook -i inventory ubuntu_24_setup_programms.yaml --ask-become-pass
+
+
+
+
+

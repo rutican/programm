@@ -1,0 +1,25 @@
+# Этот модуль включает спящий режим до входа пользователя в систему, т.к. если 
+# пользователь не вошел то и спящий режим не вкллючается
+
+---
+- name: Установить systemd-container (необходим для machinectl)
+  apt:
+    name: systemd-container
+    state: present
+  become: yes
+  environment:
+    DEBIAN_FRONTEND: noninteractive
+
+- name: Установить таймаут перехода в спящий режим (15 минут) для GDM
+  shell: |
+    machinectl shell gdm@ /bin/bash -c "export $(dbus-launch); gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 900"
+  args:
+    executable: /bin/bash
+  become: yes
+
+- name: Установить действие при бездействии как 'suspend' для GDM
+  shell: |
+    machinectl shell gdm@ /bin/bash -c "export $(dbus-launch); gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'suspend'"
+  args:
+    executable: /bin/bash
+  become: yes

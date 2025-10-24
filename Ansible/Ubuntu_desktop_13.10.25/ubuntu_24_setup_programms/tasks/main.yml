@@ -1,0 +1,64 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for ubuntu_24_setup_programms
+
+
+- name: Обновить кэш пакетов apt
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600  # обновлять не чаще чем раз в час
+  become: yes
+
+
+
+- name: Установить необходимые программы
+  apt:
+    name: "{{ ubuntu_24_programs }}"
+    state: present
+    autoremove: no
+    autoclean: no
+  become: yes
+  environment:
+    DEBIAN_FRONTEND: noninteractive
+#🔹 become: yes — даёт права sudo (обязательно для установки пакетов).
+#🔹 DEBIAN_FRONTEND: noninteractive — предотвращает вопросы вроде "Хотите перезаписать конфиг?" при установке.
+
+
+- name: Пакеты успешно установлены
+  debug:
+    msg: "Установлен пакет: {{ item }}"
+  loop: "{{ ubuntu_24_programs }}"
+
+
+
+# Установим hstr 
+- name: Установить hstr
+  apt:
+    name: hstr
+    state: present
+  become: yes
+
+- name: Добавить конфигурацию hstr в ~/.bashrc
+  shell: hstr --show-configuration >> ~/.bashrc
+  args:
+    creates: ~/.hstr_history  # выполняется только если файл ещё не создан (идемпотентность)
+
+
+- name: Установить Visual Studio Code
+  import_tasks: vscode.yml
+
+#- name: Установить VirtualBox
+#  import_tasks: virtualbox.yml
+
+- name: Установить Chromium
+  import_tasks: chromium.yml
+
+- name: Установить GIMP
+  import_tasks: gimp.yml
+
+
+- name: Настроить спящий режим на экране входа (GDM)
+  import_tasks: gdm-suspend-machinectl.yml
+
+- name: Установить Kdenlive
+  import_tasks: kdenlive.yml
